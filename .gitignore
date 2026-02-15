@@ -1,0 +1,26 @@
+# Ignore executable files
+*.out
+*.exe
+
+# Ignore object files
+*.o
+
+# Ignore libraries
+*.a
+*.so
+*.dll
+
+# Ignore shared objects
+*.so
+
+# Ignore IDE files
+*.idea/
+*.vscode/
+
+# Ignore build directories
+build/
+out/
+
+# Ignore OS specific files
+.DS_Store
+Thumbs.db
