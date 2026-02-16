@@ -20,7 +20,8 @@ int main()
     //This will print "Name: Hello" and then print the number of characters printed by the inner printf, which will be 12 for "Name: Hello".
     printf("%d\n", printf("Name: %s\n", name));
 
-    printf("%d\n", printf("This is a nested printf example.\n"));
+    //This will print "Hello" starting from the 3rd character (which is "l") and then print the number of characters printed by the inner printf, which will be 8 for "lo".
+    printf("Hello"+2, printf("\nTerminated\n"));
 
     return 0;
 }
