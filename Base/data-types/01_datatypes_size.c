@@ -14,9 +14,13 @@ int main() {
     int normalInt = 42;
     printf("Value of normalInt = %d, Size of normalInt (int) = %zu\n", normalInt, sizeof(normalInt));
 
-    int outofRangeInt = 274877906944; // This value is out of range for a 32-bit signed int 
+    int outofRangeInt = 2147483647 + 1; // This value is out of range for a 32-bit signed int 
     // The behavior of this assignment is implementation-defined, but it typically results in overflow and wraps around to a negative value due to the way signed integers are represented in memory (two's complement).
     printf("Value of outofRangeInt = %d, Size of outofRangeInt (int) = %zu\n", outofRangeInt, sizeof(outofRangeInt));
+
+    int outofRangeInt1 = 274877906944; // This value is out of range for a 32-bit signed int 
+    // The behavior of this assignment is implementation-defined, but it typically results in overflow and wraps around to a negative value due to the way signed integers are represented in memory (two's complement).
+    printf("Value of outofRangeInt1 = %d, Size of outofRangeInt1 (int) = %zu\n", outofRangeInt1, sizeof(outofRangeInt1));
 
     // Print the size of pointer types in bytes
     // The size of pointer types can vary based on the architecture (32-bit vs 64-bit).
