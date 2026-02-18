@@ -1,0 +1,69 @@
+Compilation is a process of converting basic c/c++ files from human readable language to machine level language
+
+The compilation is the process of converting the source code of the C language into machine code. As C is a mid-level language, it needs a compiler to convert it into an executable code so that the program can be run on our machine.
+
+What goes inside the compilation process?
+A compiler converts a C program into an executable. There are four phases for a C program to become an executable: 
+
+1. Pre-processing
+2. Compilation
+3. Assembly
+4. Linking
+
+1. Pre-processor stage: 
+    a. Removal of Comments
+    b. Expansion of Macros
+    c. Expansion of the included files.
+    d. Conditional compilation
+Basically it replaces the #include statements, define statements and everything related to it before compilation. it just copies and pastes the contents before performing any further compilation process. Output of the process is : filaname.i
+
+Input : filename.c/filename.cpp
+Output : filename.i
+
+2. Compilation
+This step will just take the filename.i and convert it into assembly level code and store it into filename.s 
+
+Input : filename.i
+Output : filename.s
+
+3. Assembling
+At this step, code is converted into machine language
+
+Input : filename.s
+Output : filename.o
+
+4. Linking 
+This is the final phase in which all the linking of function calls with their definitions is done. Linker knows where all these functions are implemented. Linker does some extra work also: it adds some extra code to our program which is required when the program starts and ends. For example, there is a code that is required for setting up the environment like passing command line arguments. This task can be easily verified by using size filename.o and size filename. Through these commands, we know how the output file increases from an object file to an executable file. This is because of the extra code that Linker adds to our program.
+
+Linking can be of two types:
+
+Static Linking: All the code is copied to the single file and then executable file is created.
+Dynamic Linking: Only the names of the shared libraries is added to the code and then it is referred during the execution.
+
+NOTE: The #include will even be replaced if there is only } in the file and will compile without any error 
+example: 
+#include <iostream>
+
+int main
+{
+    return 0;
+}
+
+I can have one file which will have just } like below
+
+filename: Curlybraces.c
+}
+
+filename: main.c
+#include <iostream>
+
+int main
+{
+    return 0;
+#include "Curlybraces.c"
+
+The above both examples will perform the same way in both cases.
+
+To-Do: Create a sample project to make sure the compilation process is observed. 
+
+Cheers, if you learned something new today!
