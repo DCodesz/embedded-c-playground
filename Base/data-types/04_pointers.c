@@ -1,10 +1,19 @@
 #include <stdio.h>
 
-// Nothing Fancy pointers are just a variable that holds memory address of another variable.
+// Nothing Fancy, pointers are just a variable that holds memory address of another variable.
 // The pointer is as basic as a variable, but instead of holding a value, it holds the address of another variable.
 // This can be void which can be type-casted to any datatype. 
 // The size of a pointer is typically 4 bytes on a 32-bit system and 8 bytes on a 64-bit system, regardless of the type it points to. This is because the pointer needs to be able to hold the address of any location in memory, and the size of the address space is determined by the architecture.
 // The datatype is specified to indicate the type of data it will be storing so that based on datatype the compiler can perform addition or any mathematical operation.
+
+
+//Below Function is the classsic example of pass by Value. C supports only pass by value and not pass by reference. 
+void Increment(int* ptr) {
+    // This function takes a pointer to an integer as an argument and increments the value at that address by 1.
+    (*ptr)++; // The * operator is used to dereference the pointer, which gives us access to the value stored at that address. We then increment that value by 1.
+    //*ptr++; This will increment the pointer example : *ptr = 10; *ptr++ will be address of *ptr + 1 incrementing pointer address with 4 bytes (size of int).
+}
+
 
 int main() {
     // Declare an integer variable and a pointer to an integer
@@ -37,6 +46,13 @@ int main() {
     printf("Size of double pointer = %zu bytes\n", sizeof(doublePtr)); // This  will print the size of a double pointer, which is typically 4 bytes on a 32-bit system and 8 bytes on a 64-bit system.
     printf("Size of char pointer = %zu bytes\n", sizeof(charPtr)); // This will print the size of a char pointer, which is typically 4 bytes on a 32-bit system and 8 bytes on a 64-bit system.
     printf("Size of long pointer = %zu bytes\n", sizeof(longPtr)); // This will print the size of a long pointer, which is typically 4 bytes on a 32-bit system and 8 bytes on a 64-bit system.
+
+    Increment(&num); // We pass the address of num to the Increment function, which will increment the value at that address by 1.
+    printf("Value of num after incrementing = %d\n", num); // This will print 101, since we incremented num by 1 using the Increment function.
+
+    //Same thing but with pointer
+    Increment(ptr); // We can also pass the pointer directly to the Increment function, since ptr already holds the address of num. This will also increment num by 1.
+    printf("Value of num after incrementing again = %d\n", num); // This will print 102, since we incremented num by 1 again using the Increment function.
 
     return 0;
 }
