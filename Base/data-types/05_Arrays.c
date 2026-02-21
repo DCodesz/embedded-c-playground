@@ -1,13 +1,23 @@
 #include <stdio.h>
 
 // An array is a collection of elements of the same type stored in contiguous memory locations.
-// The size of an array must be a constant expression, and it cannot be changed after the array is declared. The elements of an array are accessed using an index, which starts from 0. The name of the array is a pointer to the first element of the array, and we can use pointer arithmetic to access the elements of the array.
+// The size of an array must be a constant expression, and it cannot be changed after the array is declared. 
+// The elements of an array are accessed using an index, which starts from 0. The name of the array is a pointer to the first element of the array, and we can use pointer arithmetic to access the elements of the array.
 
 void printArray(int arr[], int size) {
     // This function takes an array of integers and its size as arguments and prints the elements of the array.
     printf("Elements of the array:\n");
     for (int i = 0; i < size; i++) {
         printf("%d ", arr[i]); // Accessing array elements using index
+    }
+    printf("\n");
+}
+
+void printArrayPointer(int *arr, int size) {
+    // This function takes a pointer to an array of integers and its size as arguments and prints the elements of the array.
+    printf("Elements of the array:\n");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", *(arr + i)); // Accessing array elements using pointer arithmetic
     }
     printf("\n");
 }
@@ -31,6 +41,9 @@ int main() {
 
     // Pass the array to a function
     printArray(arr, sizeof(arr) / sizeof(arr[0])); 
+
+    // Pass the array to a function using a pointer
+    printArrayPointer(arr, sizeof(arr) / sizeof(arr[0]));
     
     return 0;
 }
