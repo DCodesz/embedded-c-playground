@@ -22,6 +22,15 @@ void printArrayPointer(int *arr, int size) {
     printf("\n");
 }
 
+void printArrayPointerIllegal(int *arr, int size) {
+    // Incorrectly attempts to print the elements of the array by adding i to the value pointed to by arr, which is not the correct way to access array elements using a pointer.
+    printf("Elements of the array:\n");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", (*arr) + i);  // This is incorrect because it adds i to the value pointed to by arr, not to the address of arr
+    }
+    printf("\n");
+}
+
 int main() {
     // Declare an array of integers with a size of 5
     int arr[5] = {10, 20, 30, 40, 50};
@@ -44,6 +53,9 @@ int main() {
 
     // Pass the array to a function using a pointer
     printArrayPointer(arr, sizeof(arr) / sizeof(arr[0]));
+
+    // Pass the array to a function using a pointer with illegal access
+    printArrayPointerIllegal(arr, sizeof(arr) / sizeof(arr[0]));
     
     return 0;
 }
