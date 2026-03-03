@@ -8,6 +8,20 @@ union IntOrFloat {
     float f;   // This member can hold a float value
 };
 
+union structUnion
+{
+    /* data */
+    int register1;
+    struct 
+    {
+        /* data */
+        int register2;
+        float register3;
+        double register4;
+    }reg;
+};
+
+
 // Main function to demonstrate the use of unions
 int main() {
     union IntOrFloat value;
@@ -25,6 +39,12 @@ int main() {
     printf("Integer value after assigning float: %d\n", value.i);
 
     printf("Size of IntOrFloat union: %lu bytes\n", sizeof(union IntOrFloat));
+
+    union structUnion su;
+    su.register1 = 10;
+    su.reg.register2 = 20;
+    printf("Struct union register1: %d\n", su.register1);
+    printf("Size of structUnion: %lu bytes\n", sizeof(union structUnion));
 
     return 0;
 }
