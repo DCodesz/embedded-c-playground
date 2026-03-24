@@ -35,6 +35,10 @@ int main() {
     printf("Modified value of num = %d\n", num); // This will print 100
     printf("Value pointed to by ptr after modification = %d\n", *ptr); // This will also print 100
 
+    // Print the address of num and the value of ptr
+    printf("Address of num = %p\n", (void*)&num); // This will print the memory address of num. The %p format specifier is used for printing pointers, and we cast the address to void* for portability.
+    printf("Value of ptr (address it points to) = %p\n", (void*)ptr); // This will print the same memory address as above, since ptr points to num.
+
     int *intPtr = NULL; // A pointer that is initialized to NULL does not point to any valid memory location. It is a good practice to initialize pointers to NULL if they are not immediately assigned a valid address, as this can help prevent accidental dereferencing of uninitialized pointers, which can lead to undefined behavior.
     float *floatPtr = NULL; // Similarly, this pointer is also initialized to NULL.
     double *doublePtr = NULL; // This pointer is also initialized to NULL.
