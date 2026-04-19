@@ -4,7 +4,7 @@
 struct Point {
     int x;
     int y;
-};
+} point;
 
 // A structure to demonstrate padding in C
 struct StructWithPadding {

@@ -42,8 +42,15 @@ int main() {
 
     union structUnion su;
     su.register1 = 10;
-    su.reg.register2 = 20;
     printf("Struct union register1: %d\n", su.register1);
+    printf("Struct union register2: %d\n", su.reg.register2);
+    printf("Struct union register3: %.2f\n", su.reg.register3);
+    printf("Struct union register4: %lf\n", su.reg.register4);
+    printf("Size of structUnion: %lu bytes\n", sizeof(union structUnion));
+    su.reg.register2 = 20;
+    printf("Struct union register2: %d\n", su.reg.register2);
+    printf("Struct union register3: %.2f\n", su.reg.register3);
+    printf("Struct union register4: %lf\n", su.reg.register4);
     printf("Size of structUnion: %lu bytes\n", sizeof(union structUnion));
 
     return 0;
