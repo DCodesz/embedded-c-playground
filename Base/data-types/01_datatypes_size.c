@@ -1,6 +1,26 @@
 #include <stdio.h>
 
 int main() {
+
+    //Memory stack understanding for data types and their sizes is crucial for efficient programming, especially in embedded systems where memory resources are limited.
+    //The size of data types can vary based on the architecture and compiler, but there are some common sizes for basic data types in C.
+    //Here are the typical sizes of basic data types in C on a 32-bit architecture:
+    // char      = 1 byte (8 bits)  
+    // short     = 2 bytes (16 bits)
+    // int       = 4 bytes (32 bits)
+    // long      = 4 bytes (32 bits) on 32-bit systems, 8 bytes (64 bits) on 64-bit systems
+    // long long = 8 bytes (64 bits)
+    // float     = 4 bytes (32 bits)
+    // double    = 8 bytes (64 bits)
+    
+    char charVar = 'A'; // 1 byte
+    short shortVar = 32767; // 2 bytes
+    int intVar = 2147483647; // 4 bytes
+    long longVar = 2147483647; // 4 bytes on 32-bit, 8 bytes on 64-bit
+    long long longLongVar = 9223372036854775807; // 8 bytes
+    float floatVar = 3.14f; // 4 bytes
+    double doubleVar = 3.141592653589793; // 8 bytes
+
     // Print the size of various data types in bytes %zu is the format specifier for size_t, 
     //which is the type returned by sizeof operator
     printf("char      = %zu\n", sizeof(char));
